@@ -8,14 +8,14 @@ const TextCarousel = ({ card, index, activeIndex, className, isHeader }) => {
       const childHeight = childRef.current.offsetHeight;
       parentRef.current.style.height = `${childHeight / card.length}px`;
     }
-  }, []);
+  });
   return (
     <div ref={parentRef} className={className}>
       <p
         ref={childRef}
         className={
           `leading-normal relative transition duration-1500 flex flex-col
-          ${isHeader ? 
+          ${isHeader ?
             'font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-200 to-pink-600'
             : ''
           }`
